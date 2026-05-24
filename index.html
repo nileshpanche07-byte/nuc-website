@@ -1,183 +1,417 @@
 
     <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NUC LIC Careers</title>
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUC Official Website</title>
 
-    body{
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
-    }
+<style>
 
-    header{
-      background:linear-gradient(135deg,#1e3a8a,#2563eb);
-      padding:60px 20px;
-      text-align:center;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    header h1{
-      font-size:3rem;
-      margin-bottom:15px;
-    }
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
 
-    header p{
-      font-size:1.2rem;
-      max-width:700px;
-      margin:auto;
-    }
+header{
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-    .btn{
-      display:inline-block;
-      margin-top:25px;
-      padding:14px 30px;
-      background:#facc15;
-      color:black;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:10px;
-      transition:0.3s;
-    }
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#facc15;
+}
 
-    .btn:hover{
-      background:white;
-      transform:scale(1.05);
-    }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+transition:0.3s;
+}
 
-    section{
-      padding:60px 20px;
-      max-width:1200px;
-      margin:auto;
-    }
+nav a:hover{
+color:#facc15;
+}
 
-    .title{
-      text-align:center;
-      font-size:2.2rem;
-      margin-bottom:40px;
-      color:#60a5fa;
-    }
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+.hero-content h1{
+font-size:60px;
+margin-bottom:20px;
+}
 
-    .card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.3);
-      transition:0.3s;
-    }
+.hero-content p{
+font-size:22px;
+margin-bottom:30px;
+}
 
-    .card:hover{
-      transform:translateY(-8px);
-      background:#334155;
-    }
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#facc15;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:10px;
+transition:0.3s;
+}
 
-    .card h3{
-      color:#facc15;
-      margin-bottom:15px;
-      font-size:1.5rem;
-    }
+.btn:hover{
+background:white;
+transform:scale(1.05);
+}
 
-    .salary{
-      margin-top:15px;
-      color:#4ade80;
-      font-weight:bold;
-    }
+section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+}
 
-    .contact{
-      text-align:center;
-      background:#1e3a8a;
-      border-radius:20px;
-      padding:50px 20px;
-    }
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#60a5fa;
+}
 
-    footer{
-      text-align:center;
-      padding:20px;
-      background:black;
-      color:#94a3b8;
-    }
-  </style>
+.about{
+text-align:center;
+font-size:20px;
+max-width:900px;
+margin:auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+.card h3{
+color:#facc15;
+margin-bottom:15px;
+font-size:28px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.contact-box{
+background:#1e3a8a;
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact-box p{
+font-size:20px;
+margin:15px 0;
+}
+
+.youtube{
+text-align:center;
+}
+
+.youtube a{
+display:inline-block;
+margin-top:20px;
+}
+
+.login-section{
+max-width:450px;
+margin:auto;
+background:#1e293b;
+padding:40px;
+border-radius:20px;
+}
+
+.login-section input{
+width:100%;
+padding:15px;
+margin:15px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+.login-section button{
+width:100%;
+padding:15px;
+background:#facc15;
+border:none;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+text-align:center;
+background:#1e293b;
+padding:40px;
+border-radius:20px;
+margin-top:30px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:25px;
+color:#94a3b8;
+margin-top:50px;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>NUC LIC Careers</h1>
-  <p>
-    LIC में Career बनाने के लिए Premium Guidance Platform।
-    यहाँ Agent, Development Officer, Clerk और AAO की पूरी जानकारी मिलेगी।
-  </p>
-  <a href="#jobs" class="btn">Explore Careers</a>
+<div class="logo">NUC</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#login">Login</a>
+</nav>
 </header>
 
-<section id="jobs">
-  <h2 class="title">LIC Career Options</h2>
+<section class="hero">
+<div class="hero-content">
+<h1>Welcome To NUC Official</h1>
 
-  <div class="cards">
+<p>
+Build Your Digital Future With NUC Company
+</p>
 
-    <div class="card">
-      <h3>LIC Agent</h3>
-      <p>
-        लोगों को Insurance Policy समझाना और LIC Plans बेचना।
-        Commission आधारित income होती है।
-      </p>
-      <div class="salary">Income: ₹20,000 - ₹1,00,000+</div>
-    </div>
-
-    <div class="card">
-      <h3>Development Officer</h3>
-      <p>
-        Agents की टीम बनाना, उन्हें train करना और business बढ़ाना।
-      </p>
-      <div class="salary">Salary: ₹40,000 - ₹1,50,000+</div>
-    </div>
-
-    <div class="card">
-      <h3>Clerk / Assistant</h3>
-      <p>
-        Office management, customer support और documents handling।
-      </p>
-      <div class="salary">Salary: ₹30,000 - ₹60,000+</div>
-    </div>
-
-    <div class="card">
-      <h3>AAO / Officer</h3>
-      <p>
-        Administrative और management related work। LIC की top सरकारी jobs में से एक।
-      </p>
-      <div class="salary">Salary: ₹80,000 - ₹1,20,000+</div>
-    </div>
-
-  </div>
+<a href="#services" class="btn">Explore Now</a>
+</div>
 </section>
 
-<section>
-  <div class="contact">
-    <h2>Join NUC Platform</h2>
-    <p style="margin-top:15px; font-size:1.1rem;">
-      LIC Career सीखो, Training लो और अपनी income बढ़ाओ।
-    </p>
+<section id="about">
+<h2 class="section-title">About NUC</h2>
 
-    <a href="#" class="btn">Contact Now</a>
-  </div>
+<div class="about">
+<p>
+NUC is a modern digital platform focused on business,
+career growth, education, technology and future opportunities.
+Our mission is to create a professional online platform
+that helps people grow digitally.
+</p>
+</div>
 </section>
+
+<section id="services">
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Business</h3>
+<p>
+Business guidance and growth solutions.
+</p>
+</div>
+
+<div class="card">
+<h3>Digital Services</h3>
+<p>
+Modern online digital support and services.
+</p>
+</div>
+
+<div class="card">
+<h3>Career Support</h3>
+<p>
+Career guidance and learning opportunities.
+</p>
+</div>
+
+<div class="card">
+<h3>Technology</h3>
+<p>
+Future technology and innovation support.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="section-title">Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+</section>
+
+<section class="youtube">
+<h2 class="section-title">Our YouTube Channel</h2>
+
+<p>Subscribe Hidden History BGT</p>
+
+<a href="#" class="btn">Visit Channel</a>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact-box">
+
+<p>📞 Mobile: 7722826197</p>
+
+<p>📧 Email: nileshpanche07@gmail.com</p>
+
+<a href="https://wa.me/917722826197" class="btn">
+WhatsApp Chat
+</a>
+
+</div>
+</section>
+
+<section id="login">
+<h2 class="section-title">NUC Login</h2>
+
+<div class="login-section">
+
+<input type="text" id="username" placeholder="Enter Username">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+<div class="dashboard" id="dashboard">
+<h2>Welcome Admin</h2>
+
+<p>
+You are successfully logged into NUC Dashboard.
+</p>
+
+<br>
+
+<button onclick="logout()">Logout</button>
+</div>
+
+</div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917722826197">
+WhatsApp
+</a>
 
 <footer>
-  © 2026 NUC LIC Careers | Designed by Nilesh Panche
+© 2026 NUC Official Website | Designed By Nilesh Panche
 </footer>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user==="admin" && pass==="nuc123"){
+
+document.getElementById("dashboard").style.display="block";
+
+alert("Login Successful");
+
+}else{
+
+alert("Wrong Username or Password");
+
+}
+
+}
+
+function logout(){
+
+document.getElementById("dashboard").style.display="none";
+
+alert("Logged Out");
+
+}
+
+</script>
 
 </body>
 </html>
