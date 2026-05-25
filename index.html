@@ -1,605 +1,744 @@
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
+    <!-- ================= SEO META TAGS ================= -->
+
+<title>NUC Services | Real Estate, LIC Insurance & Digital Services in Madhya Pradesh</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUC Official Website</title>
 
-<style>
+<!-- Primary SEO -->
+<meta name="title" content="NUC Services | Real Estate, LIC Insurance & Digital Services">
+<meta name="description" content="NUC Services provides Real Estate, LIC Insurance, Property Solutions, Documentation, Online Services and Business Consultancy across Madhya Pradesh.">
+<meta name="keywords" content="NUC Services, Real Estate, LIC Insurance, Property Dealer, Digital Services, Online Services, Documentation, Business Solutions, Madhya Pradesh">
+<meta name="author" content="NUC Services">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<!-- Google Verification -->
+<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
 
-body{
-background:#0f172a;
-color:white;
-line-height:1.6;
-}
+<!-- Theme Color -->
+<meta name="theme-color" content="#0f172a">
 
-header{
-background:linear-gradient(135deg,#1e3a8a,#2563eb);
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
-}
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/">
+<meta property="og:title" content="NUC Services">
+<meta property="og:description" content="Professional Real Estate, LIC Insurance & Digital Services Platform">
+<meta property="og:image" content="https://yourwebsite.com/banner.jpg">
 
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#facc15;
-}
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://yourwebsite.com/">
+<meta property="twitter:title" content="NUC Services">
+<meta property="twitter:description" content="Trusted Real Estate & Business Services in Madhya Pradesh">
+<meta property="twitter:image" content="https://yourwebsite.com/banner.jpg">
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:bold;
-transition:0.3s;
-}
+<!-- Canonical URL -->
+<link rel="canonical" href="https://yourwebsite.com/">
 
-nav a:hover{
-color:#facc15;
-}
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
 
-.hero{
-height:90vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-}
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="logo.png">
 
-.hero-content h1{
-font-size:60px;
-margin-bottom:20px;
-}
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.hero-content p{
-font-size:22px;
-margin-bottom:30px;
-}
+<!-- ================= END SEO META TAGS ================= -->.                           
+<!DOCTYPE html>
+<html lang="en">
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#facc15;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:10px;
-transition:0.3s;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-.btn:hover{
-background:white;
-transform:scale(1.05);
-}
+  <title>NUC Services | Mobile Responsive Website</title>
 
-section{
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#60a5fa;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-.about{
-text-align:center;
-font-size:20px;
-max-width:900px;
-margin:auto;
-}
+    body {
+      background: #f5f7fb;
+      color: #222;
+      overflow-x: hidden;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+    /* HEADER */
 
-.card{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-transition:0.3s;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
+    header {
+      background: #0f172a;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-.card:hover{
-transform:translateY(-10px);
-background:#334155;
-}
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.card h3{
-color:#facc15;
-margin-bottom:15px;
-font-size:28px;
-}
+    .logo {
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+    }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+    .logo span {
+      color: #38bdf8;
+    }
 
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:20px;
-transition:0.3s;
-}
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
 
-.contact-box{
-background:#1e3a8a;
-padding:40px;
-border-radius:20px;
-text-align:center;
-}
+    .menu a:hover {
+      color: #38bdf8;
+    }
 
-.contact-box p{
-font-size:20px;
-margin:15px 0;
-}
+    /* MOBILE MENU */
 
-.youtube{
-text-align:center;
-}
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
 
-.youtube a{
-display:inline-block;
-margin-top:20px;
-}
+    /* HERO */
 
-.login-section{
-max-width:450px;
-margin:auto;
-background:#1e293b;
-padding:40px;
-border-radius:20px;
-}
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      gap: 40px;
+      background: white;
+      flex-wrap: wrap;
+    }
 
-.login-section input{
-width:100%;
-padding:15px;
-margin:15px 0;
-border:none;
-border-radius:10px;
-font-size:16px;
-}
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
 
-.login-section button{
-width:100%;
-padding:15px;
-background:#facc15;
-border:none;
-font-size:18px;
-font-weight:bold;
-border-radius:10px;
-cursor:pointer;
-}
+    .hero-text h1 {
+      font-size: 55px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
 
-.dashboard{
-display:none;
-text-align:center;
-background:#1e293b;
-padding:40px;
-border-radius:20px;
-margin-top:30px;
-}
+    .hero-text span {
+      color: #2563eb;
+    }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-<!-- ========================= -->
-<!-- NUC VISITING CARD SECTION -->
-<!-- ========================= -->
+    .hero-text p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
 
-<section id="branding">
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-<h2 class="section-title">NUC Branding</h2>
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+    }
 
-<div class="cards">
+    .hero-image {
+      flex: 1;
+      text-align: center;
+      min-width: 280px;
+    }
 
-<div class="card">
-<h3>Visiting Card</h3>
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+    }
 
-<p>
-Professional NUC business visiting card design.
-</p>
+    /* SERVICES */
 
-<a href="#" class="btn">Download Card</a>
-</div>
+    .services {
+      padding: 80px 5%;
+    }
 
-<div class="card">
-<h3>Poster Design</h3>
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 50px;
+      color: #0f172a;
+    }
 
-<p>
-Modern poster for NUC business promotion.
-</p>
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
-<a href="#" class="btn">View Poster</a>
-</div>
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
 
-<div class="card">
-<h3>Standee Banner</h3>
+    .card:hover {
+      transform: translateY(-8px);
+    }
 
-<p>
-Vertical standee banner for office and events.
-</p>
+    .card h3 {
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
 
-<a href="#" class="btn">View Banner</a>
-</div>
+    .card p {
+      color: #666;
+      line-height: 1.7;
+    }
 
-<div class="card">
-<h3>Horizontal Banner</h3>
+    /* ABOUT */
 
-<p>
-Professional horizontal business advertising banner.
-</p>
+    .about {
+      background: #0f172a;
+      color: white;
+      padding: 80px 5%;
+      text-align: center;
+    }
 
-<a href="#" class="btn">Open Banner</a>
-</div>
+    .about p {
+      max-width: 850px;
+      margin: auto;
+      margin-top: 20px;
+      line-height: 1.9;
+      color: #cbd5e1;
+    }
 
-</div>
+    /* CONTACT */
 
-</section>
+    .contact {
+      padding: 80px 5%;
+      text-align: center;
+      background: white;
+    }
 
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
 
-<!-- ========================= -->
-<!-- EXTRA CSS -->
-<!-- ========================= -->
+    .contact p {
+      margin-top: 15px;
+      color: #555;
+    }
 
-<style>
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 20px;
+    }
 
-#branding{
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
-}
+    /* ========================= */
+    /* MOBILE RESPONSIVE DESIGN */
+    /* ========================= */
 
-#branding .card{
-text-align:center;
-}
+    @media(max-width: 992px) {
 
-#branding .btn{
-margin-top:20px;
-display:inline-block;
-padding:12px 25px;
-background:#facc15;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:10px;
-transition:0.3s;
-}
+      .hero-text h1 {
+        font-size: 42px;
+      }
 
-#branding .btn:hover{
-background:white;
-transform:scale(1.05);
-}
+    }
 
-</style>
-footer{
-background:black;
-text-align:center;
-padding:25px;
-color:#94a3b8;
-margin-top:50px;
-}
+    @media(max-width: 768px) {
 
-</style>
+      .menu-btn {
+        display: block;
+      }
+
+      .menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #0f172a;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.4s;
+      }
+
+      .menu.active {
+        left: 0;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+    }
+
+    @media(max-width: 480px) {
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .hero-text h1 {
+        font-size: 28px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">NUC</div>
+  <!-- HEADER -->
 
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-<a href="#login">Login</a>
-</nav>
-</header>
+  <header>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Welcome To NUC Official</h1>
+    <div class="navbar">
 
-<p>
-Build Your Digital Future With NUC Company
-</p>
+      <div class="logo">NUC <span>Services</span></div>
 
-<a href="#services" class="btn">Explore Now</a>
-</div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+      <div class="menu" id="menu">
+
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <h1>
+        Professional <span>Business & Real Estate</span> Solutions
+      </h1>
+
+      <p>
+        NUC Services provides Real Estate, LIC Insurance,
+        Documentation and Digital Business Services across
+        Madhya Pradesh with trusted support.
+      </p>
+
+      <a href="#contact" class="btn">Contact Now</a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        alt="Business Services">
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="service-grid">
+
+      <div class="card">
+        <h3>🏠 Real Estate</h3>
+        <p>Property Buying, Selling and Rental Support Services.</p>
+      </div>
+
+      <div class="card">
+        <h3>🛡 LIC Insurance</h3>
+        <p>Life Insurance Plans and Premium Support Solutions.</p>
+      </div>
+
+      <div class="card">
+        <h3>📄 Documentation</h3>
+        <p>Online Forms, KYC and Government Documentation Help.</p>
+      </div>
+
+      <div class="card">
+        <h3>💼 Business Consultancy</h3>
+        <p>Startup Guidance and Professional Business Support.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <h2 class="section-title">About Us</h2>
+
+    <p>
+      NUC Services is a trusted professional platform offering
+      Real Estate, Insurance and Digital Services with fast,
+      reliable and customer-focused support.
+    </p>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <h2>Contact Us</h2>
+
+      <p>📍 Madhya Pradesh, India</p>
+      <p>📞 +91 XXXXX XXXXX</p>
+      <p>📧 yourmail@gmail.com</p>
+
+      <br>
+
+      <a href="#" class="btn">Call Now</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 NUC Services | All Rights Reserved
+  </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+
+      document.getElementById("menu").classList.toggle("active");
+
+    }
+
+  </script>
+
+</body><!-- ================= LIC STYLE SERVICES SECTION ================= -->
+
+<section class="lic-services">
+
+  <div class="container">
+
+    <div class="heading">
+      <h2>Our Premium Services</h2>
+      <p>
+        Trusted Professional Services for Property, Insurance,
+        Documentation and Business Solutions.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <!-- CARD 1 -->
+
+      <div class="service-card">
+
+        <div class="icon">🏠</div>
+
+        <h3>Real Estate Services</h3>
+
+        <p>
+          Property Buying, Selling, Rental and Land Documentation Support.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="service-card">
+
+        <div class="icon">🛡</div>
+
+        <h3>LIC Insurance</h3>
+
+        <p>
+          Life Insurance Plans, Premium Payment and Financial Security Guidance.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="service-card">
+
+        <div class="icon">📄</div>
+
+        <h3>Documentation</h3>
+
+        <p>
+          Online Forms, KYC, PAN Card, Aadhaar and Government Services.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="service-card">
+
+        <div class="icon">💼</div>
+
+        <h3>Business Consultancy</h3>
+
+        <p>
+          Startup Guidance, Registration and Professional Business Support.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+      <!-- CARD 5 -->
+
+      <div class="service-card">
+
+        <div class="icon">💻</div>
+
+        <h3>Digital Services</h3>
+
+        <p>
+          Online Applications, Website Support and Digital Solutions.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+      <!-- CARD 6 -->
+
+      <div class="service-card">
+
+        <div class="icon">📞</div>
+
+        <h3>Customer Support</h3>
+
+        <p>
+          Fast Assistance and Dedicated Service Support for Every Client.
+        </p>
+
+        <a href="#">Read More →</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section id="about">
-<h2 class="section-title">About NUC</h2>
-
-<div class="about">
-<p>
-NUC is a modern digital platform focused on business,
-career growth, education, technology and future opportunities.
-Our mission is to create a professional online platform
-that helps people grow digitally.
-</p>
-</div>
-</section>
-<div class="card">
-<h3>Real Estate Services</h3>
-
-<p>
-Plot buying, selling, property guidance and land services.
-</p>
-</div>
-
-<div class="card">
-<h3>Property Consultation</h3>
-
-<p>
-Professional advice for residential and commercial property.
-</p>
-</div>
-
-<div class="card">
-<h3>Land Documentation</h3>
-
-<p>
-Support for property documents and registration guidance.
-</p>
-</div>
-
-<div class="card">
-<h3>Construction Support</h3>
-
-<p>
-House planning and construction related support services.
-</p>
-</div>
-
-<div class="card">
-<h3>Business Consultation</h3>
-
-<p>
-Business startup and growth guidance solutions.
-</p>
-</div>
-
-<div class="card">
-<h3>Digital Services</h3>
-
-<p>
-Website, branding and online business support.
-</p>
-</div>
-
-<div class="card">
-<h3>Website Development</h3>
-
-<p>
-Professional business websites and landing pages.
-</p>
-</div>
-
-<div class="card">
-<h3>YouTube Setup</h3>
-
-<p>
-Complete YouTube channel setup and branding support.
-</p>
-</div>
-
-<div class="card">
-<h3>Logo Design</h3>
-
-<p>
-Modern logo and brand identity design services.
-</p>
-</div>
-
-<div class="card">
-<h3>Career Guidance</h3>
-
-<p>
-Education, career and skill development support.
-</p>
-</div>
-
-<div class="card">
-<h3>Online Services</h3>
+<!-- ================= CSS ================= -->
+
+<style>
+
+  .lic-services{
+    padding:80px 5%;
+    background:#f4f8fc;
+  }
+
+  .container{
+    max-width:1300px;
+    margin:auto;
+  }
+
+  .heading{
+    text-align:center;
+    margin-bottom:60px;
+  }
+
+  .heading h2{
+    font-size:42px;
+    color:#003087;
+    margin-bottom:15px;
+    font-weight:700;
+  }
+
+  .heading p{
+    color:#555;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+  }
+
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+  }
+
+  .service-card{
+    background:white;
+    padding:40px 30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .service-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#f7b500;
+  }
+
+  .service-card:hover{
+    transform:translateY(-10px);
+  }
+
+  .icon{
+    width:75px;
+    height:75px;
+    background:#003087;
+    color:white;
+    font-size:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    margin-bottom:25px;
+  }
+
+  .service-card h3{
+    font-size:24px;
+    margin-bottom:18px;
+    color:#003087;
+  }
+
+  .service-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:22px;
+  }
+
+  .service-card a{
+    text-decoration:none;
+    color:#f7b500;
+    font-weight:600;
+    transition:0.3s;
+  }
+
+  .service-card a:hover{
+    color:#003087;
+  }
+
+  /* MOBILE RESPONSIVE */
 
-<p>
-Form filling, online registration and digital help support.
-</p>
-</div>
+  @media(max-width:768px){
 
-<div class="card">
-<h3>Technology Solutions</h3>
+    .heading h2{
+      font-size:32px;
+    }
 
-<p>
-Future technology and innovation support services.
-</p>
-</div>
-<section id="services">
-<h2 class="section-title">Our Services</h2>
+    .heading p{
+      font-size:16px;
+    }
 
-<div class="cards">
-<div class="card">
-<h3>Website Development</h3>
+    .service-card{
+      padding:30px 25px;
+    }
 
-<p>
-Professional business websites and landing pages.
-</p>
-</div>
-<div class="card">
-<h3>Business</h3>
-<p>
-Business guidance and growth solutions.
-</p>
-</div>
+  }
 
-<div class="card">
-<h3>Digital Services</h3>
-<p>
-Modern online digital support and services.
-</p>
-</div>
+  @media(max-width:480px){
 
-<div class="card">
-<h3>Career Support</h3>
-<p>
-Career guidance and learning opportunities.
-</p>
-</div>
+    .service-grid{
+      grid-template-columns:1fr;
+    }
 
-<div class="card">
-<h3>Technology</h3>
-<p>
-Future technology and innovation support.
-</p>
-</div>
+    .heading h2{
+      font-size:28px;
+    }
 
-</div>
-</section>
+  }
 
-<section id="gallery">
-<h2 class="section-title">Gallery</h2>
+      </style>
 
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-</section>
-
-<section class="youtube">
-<h2 class="section-title">Our YouTube Channel</h2>
-
-<p>Subscribe Hidden History BGT</p>
-
-<a href="#" class="btn">Visit Channel</a>
-</section>
-
-<section id="contact">
-<h2 class="section-title">Contact Us</h2>
-
-<div class="contact-box">
-
-<p>📞 Mobile: 7722826197</p>
-
-<p>📧 Email: nileshpanche07@gmail.com</p>
-
-<a href="https://wa.me/917722826197" class="btn">
-WhatsApp Chat
-</a>
-
-</div>
-</section>
-
-<section id="login">
-<h2 class="section-title">NUC Login</h2>
-
-<div class="login-section">
-
-<input type="text" id="username" placeholder="Enter Username">
-
-<input type="password" id="password" placeholder="Enter Password">
-
-<button onclick="login()">Login</button>
-
-<div class="dashboard" id="dashboard">
-<h2>Welcome Admin</h2>
-
-<p>
-You are successfully logged into NUC Dashboard.
-</p>
-
-<br>
-
-<button onclick="logout()">Logout</button>
-</div>
-
-</div>
-</section>
-
-<a class="whatsapp" href="https://wa.me/917722826197">
-WhatsApp
-</a>
-
-<footer>
-© 2026 NUC Official Website | Designed By Nilesh Panche
-</footer>
-
-<script>
-
-function login(){
-
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
-
-if(user==="admin" && pass==="nuc123"){
-
-document.getElementById("dashboard").style.display="block";
-
-alert("Login Successful");
-
-}else{
-
-alert("Wrong Username or Password");
-
-}
-
-}
-
-function logout(){
-
-document.getElementById("dashboard").style.display="none";
-
-alert("Logged Out");
-
-}
-
-</script>
-
-</body>
 </html>
