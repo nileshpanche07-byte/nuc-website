@@ -7,27 +7,28 @@ font-family:Arial;
 
 
 body{
-background:#f5f8ff;
-color:#111;
+background:#f6f9ff;
+color:#0f172a;
 }
+
 
 
 header{
 
 height:80px;
 background:#06172b;
-color:white;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:20px;
+justify-content:space-between;
+padding:0 8%;
+color:white;
 
 }
 
 
 .logo{
 
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 
 }
@@ -35,92 +36,131 @@ font-weight:bold;
 
 .logo span{
 
-color:#35bdf5;
+color:#38bdf8;
 
 }
 
 
+nav a{
+
+color:white;
+text-decoration:none;
+margin:15px;
+
+}
+
+
+
 .menu{
-
-font-size:35px;
-
+font-size:30px;
 }
 
 
 
 .hero{
 
-text-align:center;
-padding:70px 20px;
+min-height:600px;
+display:flex;
+align-items:center;
+padding:50px 8%;
+background:
+linear-gradient(120deg,#06172b,#2563eb);
+
+color:white;
 
 }
 
 
-.hero h3{
 
-color:#2563eb;
-background:#dbeafe;
-display:inline-block;
-padding:10px 20px;
+.tag{
+
+background:#ffffff33;
+padding:12px 20px;
 border-radius:30px;
+display:inline-block;
 
 }
+
 
 
 .hero h1{
 
-font-size:45px;
+font-size:55px;
 margin:25px 0;
 
 }
 
 
-.btn{
 
-background:#2563eb;
-color:white;
-padding:15px 30px;
+.hero a{
+
+display:inline-block;
+margin-top:30px;
+background:white;
+color:#2563eb;
+padding:15px 35px;
 border-radius:30px;
 text-decoration:none;
-display:inline-block;
-margin-top:20px;
 
 }
 
 
 
-.services{
 
-padding:40px 20px;
+section{
+
+padding:70px 8%;
 text-align:center;
 
 }
 
 
-.card{
+
+h2{
+
+font-size:40px;
+margin-bottom:40px;
+
+}
+
+
+
+.boxes{
+
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+
+}
+
+
+
+.box{
 
 background:white;
-margin:20px auto;
-padding:25px;
+width:260px;
+padding:35px;
 border-radius:20px;
-max-width:400px;
-box-shadow:0 5px 20px #ddd;
+box-shadow:0 10px 30px #ddd;
 
 }
 
 
 
-.contact{
+.about{
 
-padding:40px 20px;
-text-align:center;
+background:white;
 
 }
 
 
-input,textarea{
+
+.contact input,
+.contact textarea{
 
 width:90%;
+max-width:500px;
 padding:18px;
 margin:12px;
 border-radius:15px;
@@ -129,17 +169,18 @@ border:1px solid #ddd;
 }
 
 
+
 button{
 
-width:90%;
-padding:18px;
 background:#2563eb;
 color:white;
+padding:18px 50px;
 border:0;
 border-radius:30px;
-font-size:20px;
+font-size:18px;
 
 }
+
 
 
 
@@ -148,7 +189,7 @@ footer{
 background:#06172b;
 color:white;
 text-align:center;
-padding:40px;
+padding:50px;
 
 }
 
@@ -161,8 +202,23 @@ right:20px;
 bottom:20px;
 background:#16a34a;
 color:white;
-font-size:35px;
-padding:15px;
+padding:20px;
 border-radius:50%;
+font-size:25px;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:38px;
+}
 
 }
