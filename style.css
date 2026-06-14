@@ -5,301 +5,114 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
-
-body{
-background:#f6f9ff;
-color:#0f172a;
-}
-
-
-
 header{
-
-height:80px;
 background:#06172b;
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:0 8%;
-color:white;
-
-}
-
-
-.logo{
-
-font-size:32px;
-font-weight:bold;
-
-}
-
-
-.logo span{
-
-color:#38bdf8;
-
-}
-
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin:15px;
-
-}
-
-
-
-.menu{
-font-size:30px;
-}
-
-
-
-.hero{
-
-min-height:600px;
-display:flex;
 align-items:center;
-padding:50px 8%;
-background:
-linear-gradient(120deg,#06172b,#2563eb);
-
-color:white;
-
-}
-
-
-
-.tag{
-
-background:#ffffff33;
-padding:12px 20px;
-border-radius:30px;
-display:inline-block;
-
-}
-
-
-
-.hero h1{
-
-font-size:55px;
-margin:25px 0;
-
-}
-
-
-
-.hero a{
-
-display:inline-block;
-margin-top:30px;
-background:white;
-color:#2563eb;
-padding:15px 35px;
-border-radius:30px;
-text-decoration:none;
-
-}
-
-
-
-
-section{
-
-padding:70px 8%;
-text-align:center;
-
-}
-
-
-
-h2{
-
-font-size:40px;
-margin-bottom:40px;
-
-}
-
-
-
-.boxes{
-
-display:flex;
-flex-wrap:wrap;
-gap:25px;
-justify-content:center;
-
-}
-
-
-
-.box{
-
-background:white;
-width:260px;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px #ddd;
-
-}
-
-
-
-.about{
-
-background:white;
-
-}
-
-
-
-.contact input,
-.contact textarea{
-
-width:90%;
-max-width:500px;
-padding:18px;
-margin:12px;
-border-radius:15px;
-border:1px solid #ddd;
-
-}
-
-
-
-button{
-
-background:#2563eb;
-color:white;
-padding:18px 50px;
-border:0;
-border-radius:30px;
-font-size:18px;
-
-}
-
-
-
-
-footer{
-
-background:#06172b;
-color:white;
-text-align:center;
-padding:50px;
-
-}
-
-
-
-.whatsapp{
-
-position:fixed;
-right:20px;
-bottom:20px;
-background:#16a34a;
-color:white;
-padding:20px;
-border-radius:50%;
-font-size:25px;
-
-}
-.logo img{
-
-width:150px;
-height:auto;
-
-}
-
-
-
-@media(max-width:700px){
-
-nav{
-display:none;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-}
-/* Company Header */
-
-header{
-
-height:90px;
-background:#06172b;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 8%;
+padding:15px 8%;
 position:sticky;
 top:0;
-z-index:1000;
-
 }
 
-
-.logo img{
-
-width:170px;
-height:auto;
-display:block;
-
-}
-
-
+.logo img{width:140px;}
 
 nav a{
-
 color:white;
+margin-left:20px;
 text-decoration:none;
-font-size:18px;
-margin-left:25px;
-
 }
 
+.menu{display:none;color:white;font-size:30px;}
 
-nav a:hover{
-
-color:#38bdf8;
-
-}
-
-
-.menu{
-
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 color:white;
-font-size:35px;
-display:none;
-
+text-align:center;
 }
 
+.hero h1{font-size:50px;}
 
-
-@media(max-width:700px){
-
-nav{
-
-display:none;
-
+.btn{
+background:#2563eb;
+color:white;
+padding:15px 40px;
+border-radius:30px;
+text-decoration:none;
+margin-top:20px;
 }
 
+section{padding:60px 10%;text-align:center;}
 
-.menu{
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
 
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact input,textarea{
+width:100%;
+max-width:500px;
+padding:15px;
+margin:10px auto;
 display:block;
-
 }
 
-
-.logo img{
-
-width:130px;
-
+button{
+background:#2563eb;
+color:white;
+padding:12px 30px;
+border:none;
+border-radius:20px;
 }
 
+footer{
+background:#06172b;
+color:white;
+padding:20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:green;
+color:white;
+padding:18px;
+border-radius:50%;
+}
+
+/* ADMIN */
+.admin{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:25px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+display:none;
+}
+
+#dashboard{display:none;max-height:300px;overflow:auto;}
+
+/* MOBILE */
+@media(max-width:700px){
+nav{display:none;}
+.menu{display:block;}
+.hero h1{font-size:30px;}
+}
