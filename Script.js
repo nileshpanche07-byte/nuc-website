@@ -1,30 +1,38 @@
+import { db, collection, addDoc, getDocs } from "./firebase.js";
+
+// MENU
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("show");
 }
 
-// SAVE CONTACT DATA (LOCAL DB)
-function saveData(e){
+// 📩 SAVE TO FIREBASE (REAL DATABASE)
+window.saveData = async function(e){
 e.preventDefault();
 
 let name=document.getElementById("name").value;
 let email=document.getElementById("email").value;
 let message=document.getElementById("message").value;
 
-let data=JSON.parse(localStorage.getItem("enquiries")) || [];
+try{
+await addDoc(collection(db,"enquiries"),{
+name:name,
+email:email,
+message:message,
+time:new Date()
+});
 
-data.push({name,email,message});
-
-localStorage.setItem("enquiries",JSON.stringify(data));
-
-alert("Message Sent Successfully!");
+alert("Message Sent to NUC Successfully!");
+}catch(err){
+alert("Error: "+err.message);
+}
 }
 
-// ADMIN LOGIN
-function openAdmin(){
+// 🔐 ADMIN LOGIN (simple demo)
+window.openAdmin=function(){
 document.getElementById("adminBox").style.display="block";
 }
 
-function login(){
+window.login=function(){
 let pass=document.getElementById("pass").value;
 
 if(pass==="admin123"){
@@ -35,21 +43,32 @@ alert("Wrong Password");
 }
 }
 
-function loadData(){
-let data=JSON.parse(localStorage.getItem("enquiries")) || [];
+// 📊 LOAD REAL DATA FROM FIREBASE
+async function loadData(){
 
-document.getElementById("count").innerText=data.length;
+let querySnapshot = await getDocs(collection(db, "enquiries"));
 
 let list=document.getElementById("list");
 list.innerHTML="";
 
-data.forEach((d,i)=>{
+let count=0;
+
+querySnapshot.forEach((doc)=>{
+count++;
+let d=doc.data();
+
 list.innerHTML+=`
-<p><b>${i+1}. ${d.name}</b><br>${d.email}<br>${d.message}</p><hr>`;
+<div style="text-align:left;margin:10px 0;padding:10px;border:1px solid #ddd;">
+<b>${d.name}</b><br>
+${d.email}<br>
+${d.message}
+</div>`;
 });
+
+document.getElementById("count").innerText=count;
 }
 
-function logout(){
+window.logout=function(){
 document.getElementById("adminBox").style.display="none";
 document.getElementById("dashboard").style.display="none";
 }
