@@ -147,7 +147,11 @@ document.getElementById("dashboard").style.display="block";
 else{
 alert("Wrong Password");
 }
+alert("JS Working");
 
+function openAdmin(){
+    document.getElementById("adminBox").style.display="block";
+}
 }
 });
 
