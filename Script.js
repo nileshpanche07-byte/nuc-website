@@ -126,6 +126,9 @@ ${item.message}
 </p>
 <hr>
 `;
+function openAdmin(){
+
+document.getElementById("adminBox").style.display="block";
 
 });
 
