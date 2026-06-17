@@ -129,7 +129,26 @@ ${item.message}
 function openAdmin(){
 
 document.getElementById("adminBox").style.display="block";
+function openAdmin(){
+    document.getElementById("adminBox").style.display="block";
+}
 
+function logout(){
+    document.getElementById("adminBox").style.display="none";
+}
+
+function login(){
+
+let password = document.getElementById("pass").value;
+
+if(password === "1234"){
+document.getElementById("dashboard").style.display="block";
+}
+else{
+alert("Wrong Password");
+}
+
+}
 });
 
 }
