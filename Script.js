@@ -1,74 +1,132 @@
-import { db, collection, addDoc, getDocs } from "./firebase.js";
+// MOBILE MENU
 
-// MENU
 function toggleMenu(){
-document.getElementById("nav").classList.toggle("show");
+
+const nav = document.getElementById("nav");
+
+nav.classList.toggle("active");
+
 }
 
-// 📩 SAVE TO FIREBASE (REAL DATABASE)
-window.saveData = async function(e){
-e.preventDefault();
 
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let message=document.getElementById("message").value;
+// ADMIN OPEN
 
-try{
-await addDoc(collection(db,"enquiries"),{
+function openAdmin(){
+
+document.getElementById("adminBox").style.display="block";
+
+}
+
+
+// ADMIN LOGIN
+
+function login(){
+
+let pass = document.getElementById("pass").value;
+
+
+if(pass=="1234"){
+
+document.getElementById("dashboard").style.display="block";
+
+alert("Login Successful");
+
+}
+
+else{
+
+alert("Wrong Password");
+
+}
+
+}
+
+
+// LOGOUT
+
+function logout(){
+
+document.getElementById("dashboard").style.display="none";
+
+document.getElementById("adminBox").style.display="none";
+
+}
+
+
+// CONTACT FORM
+
+function saveData(event){
+
+event.preventDefault();
+
+
+let name =
+document.getElementById("name").value;
+
+
+let email =
+document.getElementById("email").value;
+
+
+let message =
+document.getElementById("message").value;
+
+
+
+let oldData =
+JSON.parse(localStorage.getItem("nucData")) || [];
+
+
+oldData.push({
+
 name:name,
 email:email,
-message:message,
-time:new Date()
+message:message
+
 });
 
-alert("Message Sent to NUC Successfully!");
-}catch(err){
-alert("Error: "+err.message);
-}
-}
 
-// 🔐 ADMIN LOGIN (simple demo)
-window.openAdmin=function(){
-document.getElementById("adminBox").style.display="block";
-}
+localStorage.setItem(
+"nucData",
+JSON.stringify(oldData)
+);
 
-window.login=function(){
-let pass=document.getElementById("pass").value;
 
-if(pass==="admin123"){
-document.getElementById("dashboard").style.display="block";
-loadData();
-}else{
-alert("Wrong Password");
-}
+alert("Message Sent Successfully");
+
+
+event.target.reset();
+
 }
 
-// 📊 LOAD REAL DATA FROM FIREBASE
-async function loadData(){
 
-let querySnapshot = await getDocs(collection(db, "enquiries"));
+// SHOW DATA
 
-let list=document.getElementById("list");
-list.innerHTML="";
+window.onload=function(){
 
-let count=0;
+let data =
+JSON.parse(localStorage.getItem("nucData")) || [];
 
-querySnapshot.forEach((doc)=>{
-count++;
-let d=doc.data();
 
-list.innerHTML+=`
-<div style="text-align:left;margin:10px 0;padding:10px;border:1px solid #ddd;">
-<b>${d.name}</b><br>
-${d.email}<br>
-${d.message}
-</div>`;
+document.getElementById("count").innerHTML=data.length;
+
+
+let list =
+document.getElementById("list");
+
+
+data.forEach(item=>{
+
+list.innerHTML +=
+`
+<p>
+<b>${item.name}</b><br>
+${item.email}<br>
+${item.message}
+</p>
+<hr>
+`;
+
 });
 
-document.getElementById("count").innerText=count;
-}
-
-window.logout=function(){
-document.getElementById("adminBox").style.display="none";
-document.getElementById("dashboard").style.display="none";
 }
