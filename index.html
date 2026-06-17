@@ -105,7 +105,14 @@ width="100%" height="300"></iframe>
 </div>
 
 </div>
+<script>
+const menu = document.querySelector(".menu");
+const nav = document.querySelector(".nav");
 
+menu.onclick = function(){
+  nav.classList.toggle("active");
+}
+</script>
 <script src="script.js"></script>
 <script type="module" src="firebase.js"></script>
 <script src="script.js"></script>                                                                                                 
