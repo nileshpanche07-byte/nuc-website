@@ -90,16 +90,22 @@ width="100%" height="300"></iframe>
 </footer>
 
 <!-- ADMIN PANEL -->
-<div id="adminBox" class="admin">
+
+<div id="adminBox" style="display:none;">
+
 <h2>Admin Login</h2>
 
 <input type="password" id="pass" placeholder="Enter Password">
+
 <button onclick="login()">Login</button>
 
-<div id="dashboard">
+<div id="dashboard" style="display:none;">
 <h3>Dashboard</h3>
-<p>Total Enquiries: <span id="count">0</span></p>
+<span id="count">0</span>
+<div id="list"></div>
+</div>
 
+</div>
 </div>
 <script>
 const menu = document.querySelector(".menu");
