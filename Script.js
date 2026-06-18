@@ -1,156 +1,84 @@
 // MOBILE MENU
-
 function toggleMenu(){
-
-const nav = document.getElementById("nav");
-
-nav.classList.toggle("active");
-
+  const nav = document.getElementById("nav");
+  nav.classList.toggle("active");
 }
 
 
 // ADMIN OPEN
-
 function openAdmin(){
-
-document.getElementById("adminBox").style.display="block";
-
+  document.getElementById("adminBox").style.display="block";
 }
 
 
 // ADMIN LOGIN
-
 function login(){
 
-let pass = document.getElementById("pass").value;
+  let pass = document.getElementById("pass").value;
 
-
-if(pass=="1234"){
-
-document.getElementById("dashboard").style.display="block";
-
-alert("Login Successful");
-
-}
-
-else{
-
-alert("Wrong Password");
-
-}
+  if(pass=="1234"){
+    document.getElementById("dashboard").style.display="block";
+    alert("Login Successful");
+  }
+  else{
+    alert("Wrong Password");
+  }
 
 }
 
 
 // LOGOUT
-
 function logout(){
-
-document.getElementById("dashboard").style.display="none";
-
-document.getElementById("adminBox").style.display="none";
-
+  document.getElementById("dashboard").style.display="none";
+  document.getElementById("adminBox").style.display="none";
 }
 
 
 // CONTACT FORM
-
 function saveData(event){
 
-event.preventDefault();
+ event.preventDefault();
 
+ let name = document.getElementById("name").value;
+ let email = document.getElementById("email").value;
+ let message = document.getElementById("message").value;
 
-let name =
-document.getElementById("name").value;
+ let oldData = JSON.parse(localStorage.getItem("nucData")) || [];
 
+ oldData.push({
+   name:name,
+   email:email,
+   message:message
+ });
 
-let email =
-document.getElementById("email").value;
+ localStorage.setItem("nucData",JSON.stringify(oldData));
 
+ alert("Message Sent Successfully");
 
-let message =
-document.getElementById("message").value;
-
-
-
-let oldData =
-JSON.parse(localStorage.getItem("nucData")) || [];
-
-
-oldData.push({
-
-name:name,
-email:email,
-message:message
-
-});
-
-
-localStorage.setItem(
-"nucData",
-JSON.stringify(oldData)
-);
-
-
-alert("Message Sent Successfully");
-
-
-event.target.reset();
-
+ event.target.reset();
 }
 
 
 // SHOW DATA
-
 window.onload=function(){
 
-let data =
-JSON.parse(localStorage.getItem("nucData")) || [];
+ let data = JSON.parse(localStorage.getItem("nucData")) || [];
 
+ document.getElementById("count").innerHTML=data.length;
 
-document.getElementById("count").innerHTML=data.length;
+ let list=document.getElementById("list");
 
+ data.forEach(item=>{
 
-let list =
-document.getElementById("list");
+ list.innerHTML += `
+ <p>
+ <b>${item.name}</b><br>
+ ${item.email}<br>
+ ${item.message}
+ </p>
+ <hr>
+ `;
 
+ });
 
-data.forEach(item=>{
-
-list.innerHTML +=
-`
-<p>
-<b>${item.name}</b><br>
-${item.email}<br>
-${item.message}
-</p>
-<hr>
-`;
-function openAdmin(){
-
-document.getElementById("adminBox").style.display="block";
-function openAdmin(){
-    document.getElementById("adminBox").style.display="block";
-}
-
-function logout(){
-    document.getElementById("adminBox").style.display="none";
-}
-
-function login(){
-
-let password = document.getElementById("pass").value;
-
-if(password === "1234"){
-document.getElementById("dashboard").style.display="block";
-}
-else{
-alert("Wrong Password");
-}
-alert("JS Working");
-
-function openAdmin(){
-    document.getElementById("adminBox").style.display="block";
-function openAdmin(){
-  document.getElementById("adminBox").style.display="block";
 }
