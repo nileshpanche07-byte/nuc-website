@@ -236,5 +236,7 @@ background:white;
 padding:30px;
 z-index:9999;
 border-radius:15px;
+.admin
+display:none;
 }
 }
