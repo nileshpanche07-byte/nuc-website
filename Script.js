@@ -151,8 +151,6 @@ alert("JS Working");
 
 function openAdmin(){
     document.getElementById("adminBox").style.display="block";
-}
-}
-});
-
+function openAdmin(){
+  document.getElementById("adminBox").style.display="block";
 }
