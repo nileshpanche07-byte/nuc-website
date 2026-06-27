@@ -1,96 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NUC Service Dashboard</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
 
-<div id="loginBox">
+<!-- LOGIN -->
+
+<div class="login-page" id="loginPage">
+
+
+<div class="login-card">
+
 
 <h1>NUC Service</h1>
 
-<input type="password" id="password" placeholder="Admin Password">
+<p>Admin Login</p>
 
-<button onclick="login()">Login</button>
 
-<p id="error"></p>
+<input 
+type="password"
+id="loginPass"
+placeholder="Enter Password">
+
+
+<button onclick="login()">
+Login
+</button>
+
+
+<p id="loginError"></p>
+
+
+</div>
 
 </div>
 
 
 
-<div id="app" style="display:none">
+
+<!-- MAIN APP -->
 
 
-<div class="sidebar">
+<div id="app" class="app hide">
+
+
+
+<!-- SIDEBAR -->
+
+
+<aside class="sidebar">
+
 
 <h2>NUC</h2>
 
-<button onclick="page('home')">🏠 Dashboard</button>
-<button onclick="page('customer')">👥 Customer</button>
-<button onclick="page('service')">🛠 Service</button>
-<button onclick="page('payment')">💰 Payment</button>
-<button onclick="logout()">🚪 Logout</button>
 
-</div>
+<button onclick="openPage('dashboard')">
+🏠 Dashboard
+</button>
 
 
-
-<div class="main">
-
-
-<h1>NUC Service Dashboard</h1>
+<button onclick="openPage('customers')">
+👥 Customers
+</button>
 
 
-<div id="home" class="box">
+<button onclick="openPage('services')">
+🛠 Services
+</button>
+
+
+<button onclick="openPage('payments')">
+💰 Payments
+</button>
+
+
+<button onclick="openPage('settings')">
+⚙ Settings
+</button>
+
+
+<button onclick="logout()">
+🚪 Logout
+</button>
+
+
+</aside>
+
+
+
+
+
+<!-- CONTENT -->
+
+
+<main class="content">
+
+
+
+<header>
+
+<h1>
+NUC Service Dashboard
+</h1>
+
+
+<input 
+id="search"
+placeholder="Search customer..."
+onkeyup="searchCustomer()">
+
+
+</header>
+
+
+
+
+
+
+<!-- DASHBOARD -->
+
+
+<section id="dashboard" class="page">
 
 
 <div class="cards">
 
-<div class="card">
+
+<div class="stat">
 <h3>Total Customer</h3>
-<h2 id="total">0</h2>
+<h2 id="totalCustomer">0</h2>
 </div>
 
 
-<div class="card">
-<h3>Services</h3>
-<h2>4</h2>
+<div class="stat">
+<h3>Pending</h3>
+<h2 id="pending">0</h2>
 </div>
 
 
-<div class="card">
+<div class="stat">
+<h3>Complete</h3>
+<h2 id="complete">0</h2>
+</div>
+
+
+<div class="stat">
 <h3>Income</h3>
-<h2>₹0</h2>
+<h2 id="income">
+₹0
+</h2>
 </div>
 
 
 </div>
 
+
+
+<div class="panel">
+
+
+<h2>Recent Customers</h2>
+
+
+<div id="recent">
+
 </div>
 
 
+</div>
 
-<div id="customer" class="box hide">
+
+</section>
+
+
+
+
+
+
+
+<!-- CUSTOMER -->
+
+
+<section id="customers" class="page hide">
+
+
+<div class="panel">
 
 
 <h2>Add Customer</h2>
 
 
-<input id="name" placeholder="Customer Name">
+<input id="cname"
+placeholder="Customer Name">
 
-<input id="mobile" placeholder="Mobile">
+
+<input id="cmobile"
+placeholder="Mobile Number">
+
+
+
+<select id="status">
+
+<option>
+Pending
+</option>
+
+<option>
+Complete
+</option>
+
+</select>
+
+
+
+<input id="amount"
+placeholder="Amount">
+
 
 
 <button onclick="addCustomer()">
+
 Save Customer
+
 </button>
-
-
-<div id="customerList"></div>
 
 
 </div>
@@ -98,40 +243,138 @@ Save Customer
 
 
 
-<div id="service" class="box hide">
+
+<div class="panel">
+
+
+<h2>Customer List</h2>
+
+
+<div id="customerList">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- SERVICES -->
+
+
+<section id="services" class="page hide">
+
+
+<div class="panel">
 
 <h2>Services</h2>
 
+
 <ul>
+
 <li>LIC Service</li>
+
 <li>Insurance</li>
-<li>Online Work</li>
+
+<li>Online Form</li>
+
 <li>Bill Payment</li>
+
+<li>Document Work</li>
+
+
 </ul>
 
 
 </div>
 
 
+</section>
 
 
-<div id="payment" class="box hide">
 
-<h2>Payment Details</h2>
 
-<p>No Payment Added</p>
+
+
+
+<!-- PAYMENT -->
+
+
+<section id="payments" class="page hide">
+
+
+<div class="panel">
+
+<h2>Payment</h2>
+
+
+<p>
+Total Collection:
+</p>
+
+
+<h1 id="totalIncome">
+₹0
+</h1>
+
 
 </div>
 
 
+</section>
+
+
+
+
+
+
+
+
+<!-- SETTINGS -->
+
+
+<section id="settings" class="page hide">
+
+
+<div class="panel">
+
+
+<h2>Settings</h2>
+
+
+<button onclick="clearData()">
+
+Delete All Data
+
+</button>
+
 
 </div>
 
+
+</section>
+
+
+
+</main>
+
+
+
 </div>
+
 
 
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
