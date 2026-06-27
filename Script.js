@@ -1,9 +1,11 @@
-// NUC SERVICE DASHBOARD JS
+// NUC LIFE & SERVICE
 
 
 let adminPassword = "1234";
 
-let customers = JSON.parse(localStorage.getItem("nucCustomers")) || [];
+
+let customers = 
+JSON.parse(localStorage.getItem("nucLifeData")) || [];
 
 
 
@@ -12,7 +14,10 @@ let customers = JSON.parse(localStorage.getItem("nucCustomers")) || [];
 
 function login(){
 
-let pass = document.getElementById("loginPass").value;
+
+let pass =
+document.getElementById("password").value;
+
 
 
 if(pass === adminPassword){
@@ -33,10 +38,11 @@ loadData();
 
 else{
 
-document.getElementById("loginError")
+document.getElementById("error")
 .innerHTML="Wrong Password";
 
 }
+
 
 }
 
@@ -55,19 +61,18 @@ location.reload();
 
 
 
-// PAGE CHANGE
+// PAGE
 
-function openPage(page){
-
-
-let pages=document.querySelectorAll(".page");
+function showPage(page){
 
 
-pages.forEach(p=>{
+document.getElementById("dashboard")
+.classList.add("hide");
 
-p.classList.add("hide");
 
-});
+document.getElementById("customers")
+.classList.add("hide");
+
 
 
 document.getElementById(page)
@@ -88,12 +93,13 @@ document.getElementById(page)
 function addCustomer(){
 
 
+
 let name =
-document.getElementById("cname").value;
+document.getElementById("name").value;
 
 
 let mobile =
-document.getElementById("cmobile").value;
+document.getElementById("mobile").value;
 
 
 let status =
@@ -108,8 +114,7 @@ document.getElementById("amount").value;
 
 if(name===""){
 
-alert("Customer name required");
-
+alert("Name required");
 return;
 
 }
@@ -140,21 +145,22 @@ customers.push(data);
 
 
 localStorage.setItem(
-"nucCustomers",
+"nucLifeData",
 JSON.stringify(customers)
 );
 
 
 
-document.getElementById("cname").value="";
+document.getElementById("name").value="";
 
-document.getElementById("cmobile").value="";
+document.getElementById("mobile").value="";
 
 document.getElementById("amount").value="";
 
 
 
 loadData();
+
 
 
 }
@@ -165,35 +171,24 @@ loadData();
 
 
 
-// LOAD DATA
+// LOAD
 
 
 function loadData(){
 
 
-
 let list =
-document.getElementById("customerList");
-
-
-let recent =
-document.getElementById("recent");
+document.getElementById("list");
 
 
 list.innerHTML="";
 
-recent.innerHTML="";
-
 
 
 let total=0;
-
 let pending=0;
-
 let complete=0;
-
 let income=0;
-
 
 
 
@@ -203,13 +198,11 @@ customers.forEach(c=>{
 total++;
 
 
-if(c.status==="Pending"){
+if(c.status=="Pending"){
 
 pending++;
 
-}
-
-else{
+}else{
 
 complete++;
 
@@ -222,25 +215,23 @@ income += c.amount;
 
 
 
-let div=document.createElement("div");
+list.innerHTML += `
 
 
-div.className="customer";
+<div class="customer">
 
 
-div.innerHTML=
-
-
-`
 <div>
 
-<b>${c.name}</b><br>
+<b>${c.name}</b>
+
+<br>
 
 ${c.mobile}
 
 <br>
 
-Status: ${c.status}
+${c.status}
 
 <br>
 
@@ -250,24 +241,16 @@ Status: ${c.status}
 
 
 <button onclick="deleteCustomer(${c.id})">
+
 Delete
+
 </button>
 
+
+</div>
+
+
 `;
-
-
-
-list.appendChild(div);
-
-
-
-recent.innerHTML +=
-
-`
-<p>
-${c.name} - ${c.status}
-</p>
-`
 
 
 
@@ -276,7 +259,7 @@ ${c.name} - ${c.status}
 
 
 
-document.getElementById("totalCustomer")
+document.getElementById("total")
 .innerHTML=total;
 
 
@@ -292,47 +275,8 @@ document.getElementById("income")
 .innerHTML="₹"+income;
 
 
-document.getElementById("totalIncome")
-.innerHTML="₹"+income;
-
-
-
 }
 
-
-
-
-
-
-
-
-// DELETE CUSTOMER
-
-
-function deleteCustomer(id){
-
-
-if(confirm("Delete customer?")){
-
-
-customers =
-customers.filter(c=>c.id!==id);
-
-
-
-localStorage.setItem(
-"nucCustomers",
-JSON.stringify(customers)
-);
-
-
-
-loadData();
-
-
-}
-
-}
 
 
 
@@ -343,7 +287,7 @@ loadData();
 // SEARCH
 
 
-function searchCustomer(){
+function search(){
 
 
 let text =
@@ -371,9 +315,7 @@ i.style.display="flex";
 
 else{
 
-
 i.style.display="none";
-
 
 }
 
@@ -389,34 +331,30 @@ i.style.display="none";
 
 
 
-// CLEAR ALL
+// DELETE
 
 
-function clearData(){
+function deleteCustomer(id){
 
 
-if(confirm("Delete all data?")){
+if(confirm("Delete Customer?")){
 
 
-localStorage.removeItem("nucCustomers");
+customers =
+customers.filter(c=>c.id!==id);
 
 
-customers=[];
+
+localStorage.setItem(
+"nucLifeData",
+JSON.stringify(customers)
+);
+
 
 
 loadData();
 
 
-function login(){
- let pass = document.getElementById("pass").value;
-
- if(pass === "12345"){
-   document.getElementById("adminBox").style.display="none";
-   document.getElementById("dashboard").style.display="block";
- }
- else{
-   alert("Wrong Password");
- }
-
+}
 
 }
