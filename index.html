@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
-<meta charset="UTF-8">
+<title>NUC Life & Service</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NUC Service Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,20 +16,15 @@
 
 <!-- LOGIN -->
 
-<div class="login-page" id="loginPage">
+<div id="loginPage" class="login">
 
-
-<div class="login-card">
-
-
-<h1>NUC Service</h1>
+<h1>NUC Life & Service</h1>
 
 <p>Admin Login</p>
 
-
 <input 
 type="password"
-id="loginPass"
+id="password"
 placeholder="Enter Password">
 
 
@@ -40,187 +32,114 @@ placeholder="Enter Password">
 Login
 </button>
 
-
-<p id="loginError"></p>
-
-
-</div>
+<p id="error"></p>
 
 </div>
 
 
 
 
-<!-- MAIN APP -->
+
+<!-- APP -->
+
+<div id="app" class="hide">
 
 
-<div id="app" class="app hide">
-
-
-
-<!-- SIDEBAR -->
-
-
-<aside class="sidebar">
-
+<div class="sidebar">
 
 <h2>NUC</h2>
 
-
-<button onclick="openPage('dashboard')">
-🏠 Dashboard
+<button onclick="showPage('dashboard')">
+Dashboard
 </button>
 
 
-<button onclick="openPage('customers')">
-👥 Customers
-</button>
-
-
-<button onclick="openPage('services')">
-🛠 Services
-</button>
-
-
-<button onclick="openPage('payments')">
-💰 Payments
-</button>
-
-
-<button onclick="openPage('settings')">
-⚙ Settings
+<button onclick="showPage('customers')">
+Customers
 </button>
 
 
 <button onclick="logout()">
-🚪 Logout
+Logout
 </button>
 
 
-</aside>
+</div>
 
 
 
 
 
-<!-- CONTENT -->
+<div class="main">
 
-
-<main class="content">
-
-
-
-<header>
 
 <h1>
-NUC Service Dashboard
+NUC Life & Service
 </h1>
 
 
-<input 
-id="search"
-placeholder="Search customer..."
-onkeyup="searchCustomer()">
 
-
-</header>
-
-
-
-
-
-
-<!-- DASHBOARD -->
-
-
-<section id="dashboard" class="page">
+<div id="dashboard">
 
 
 <div class="cards">
 
 
-<div class="stat">
+<div class="card">
 <h3>Total Customer</h3>
-<h2 id="totalCustomer">0</h2>
+<h2 id="total">0</h2>
 </div>
 
 
-<div class="stat">
+<div class="card">
 <h3>Pending</h3>
 <h2 id="pending">0</h2>
 </div>
 
 
-<div class="stat">
+<div class="card">
 <h3>Complete</h3>
 <h2 id="complete">0</h2>
 </div>
 
 
-<div class="stat">
+<div class="card">
 <h3>Income</h3>
-<h2 id="income">
-₹0
-</h2>
+<h2 id="income">₹0</h2>
 </div>
 
 
 </div>
 
-
-
-<div class="panel">
-
-
-<h2>Recent Customers</h2>
-
-
-<div id="recent">
-
 </div>
 
 
-</div>
-
-
-</section>
 
 
 
 
+<div id="customers" class="hide">
 
 
-
-<!-- CUSTOMER -->
-
-
-<section id="customers" class="page hide">
-
-
-<div class="panel">
+<div class="form">
 
 
 <h2>Add Customer</h2>
 
 
-<input id="cname"
+<input id="name"
 placeholder="Customer Name">
 
 
-<input id="cmobile"
+<input id="mobile"
 placeholder="Mobile Number">
-
 
 
 <select id="status">
 
-<option>
-Pending
-</option>
+<option>Pending</option>
 
-<option>
-Complete
-</option>
+<option>Complete</option>
 
 </select>
 
@@ -230,11 +149,8 @@ Complete
 placeholder="Amount">
 
 
-
 <button onclick="addCustomer()">
-
 Save Customer
-
 </button>
 
 
@@ -244,137 +160,34 @@ Save Customer
 
 
 
-<div class="panel">
+<input 
+id="search"
+onkeyup="search()"
+placeholder="Search Customer">
 
 
-<h2>Customer List</h2>
+
+<div id="list">
+
+</div>
 
 
-<div id="customerList">
+
+</div>
+
+
+
 
 </div>
 
 
 </div>
 
-
-</section>
-
-
-
-
-
-
-
-<!-- SERVICES -->
-
-
-<section id="services" class="page hide">
-
-
-<div class="panel">
-
-<h2>Services</h2>
-
-
-<ul>
-
-<li>LIC Service</li>
-
-<li>Insurance</li>
-
-<li>Online Form</li>
-
-<li>Bill Payment</li>
-
-<li>Document Work</li>
-
-
-</ul>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- PAYMENT -->
-
-
-<section id="payments" class="page hide">
-
-
-<div class="panel">
-
-<h2>Payment</h2>
-
-
-<p>
-Total Collection:
-</p>
-
-
-<h1 id="totalIncome">
-₹0
-</h1>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- SETTINGS -->
-
-
-<section id="settings" class="page hide">
-
-
-<div class="panel">
-
-
-<h2>Settings</h2>
-
-
-<button onclick="clearData()">
-
-Delete All Data
-
-</button>
-
-
-</div>
-
-
-</section>
-
-
-
-</main>
-
-
-
-</div>
 
 
 
 
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
