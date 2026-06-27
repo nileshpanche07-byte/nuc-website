@@ -407,7 +407,16 @@ customers=[];
 loadData();
 
 
-}
+function login(){
+ let pass = document.getElementById("pass").value;
+
+ if(pass === "12345"){
+   document.getElementById("adminBox").style.display="none";
+   document.getElementById("dashboard").style.display="block";
+ }
+ else{
+   alert("Wrong Password");
+ }
 
 
 }
